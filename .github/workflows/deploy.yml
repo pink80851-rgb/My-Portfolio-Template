@@ -1,15 +1,20 @@
 name: Deploy Portfolio
 on:
   push:
-    branches: [ main ] # 當你 push 到 main 分支時觸發
+    branches: [ main ] # 只有 push 到 main 分支時才觸發
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
+  pages: write      # 必須具備寫入 Pages 的權限
+  id-token: write   # 這是與 GitHub Pages 驗證身分用的關鍵
 
 jobs:
   build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    # ----------------------------
+    
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -21,7 +26,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.' # 部署整個專案目錄
+          path: '.' 
 
       - name: Deploy to GitHub Pages
         id: deployment
