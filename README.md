@@ -1,11 +1,20 @@
-🚀 自動化部署與多平台同步 (CI/CD Pipeline)
+🔧 問題 (Problem)
 
-本專案採用 GitHub Actions 實作全自動化部署流程：
+手動管理 Fortigate VIP 規則很重複，容易出錯，特別是在處理多個服務和 IP 映射時。
 
-自動化渲染：每當代碼或文件更新，自動觸發 GitHub Pages 進行前端靜態網頁更新。
+🚀 解決方案 (Solution)
 
-跨平台同步：整合 Notion API，將技術文檔即時同步至 Notion 資料庫。
+本專案自動化 Fortigate VIP 設定，減少手動操作的負擔，降低錯誤率。
 
-品牌交付：透過 Super.so 渲染引擎，達成個人技術作品集網頁的無感發布與同步更新。
-
-這套架構體現了 SRE 中「消除瑣事 (Toil Reduction)」與「基礎設施即代碼 (IaC)」的核心維運理念。
+⚙️ 功能 (Features)
+自動建立 VIP
+減少重複的防火牆設定操作
+簡化 IP 映射流程
+提升操作效率
+🧠 SRE 概念 (SRE Concept)
+降低重複勞務 (Reduce toil)
+自動化操作 (Automation)
+基礎設施即程式化 (Infrastructure as Code 的概念)
+🛠 技術 (Tech)
+Bash / Python（依你實際使用填寫）
+Fortigate CLI / API
